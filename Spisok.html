@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
     <title>Список дел</title>
-<body bgcolor="black">
-<h1 style="color: white">Список дел</h1>
-<input type="text" value="Новый элемент списка"/>
-<button>Добавить</button>
+<body align="center">
+<div id="wrapper">
+    <div id="center">
+        <div id="listOfCases" >
+            <div><h1 style="color: white">Список дел</h1></div><div>
+            <div style="display: inline-flex">
+                <input id="newCases" placeholder="Введите новое дело..." type="text" />
+                <input id="submit" value="Сохранить" type="submit">
+            </div>
+        </div>
+        </div>
+        <div id="allCases">
+            <script>
+                function deleteCase(thisCase) {
+                    thisCase.parentNode.parentNode.removeChild(thisCase.parentNode);
+                }
+                function clearCase(thisCase) {
+                    thisCase.nextSibling.setAttribute("style", "text-decoration:line-through");;
+                }
+                document.querySelector("#submit").onclick = function(){
+                    var input = document.querySelector("#newCases").value;
+                    var list = document.querySelector("#allCases");
+                    if(input!=null){
+                        var div = document.createElement('div');
+                        div.className = "list";
+                        div.innerHTML = "<a onclick='clearCase(this);' class='success'>✓</a><div class='label'>"+input+"</div><a onclick='deleteCase(this);' class='deny'>✕</a>";
+                        list.append(div);
+                    }
+                }
 
-<div style="color: azure">
-    <br>  1. <img src="https://e.unicode-table.com/orig/0b/13af65316d9b75e4ab44059f83b1b4.png" height="12" width="12">
-    Покормить кота <img src="https://vk.com/emoji/e/e29d8c_2x.png" width="12" height="12"> <br>
-    2. <img src="https://e.unicode-table.com/orig/0b/13af65316d9b75e4ab44059f83b1b4.png" height="12" width="12">
-    Заплатить за интернет <img src="https://vk.com/emoji/e/e29d8c_2x.png" width="12" height="12"> <br>
-    3. <img src="https://e.unicode-table.com/orig/0b/13af65316d9b75e4ab44059f83b1b4.png" height="12" width="12">
-    Сходить в магазин <img src="https://vk.com/emoji/e/e29d8c_2x.png" width="12" height="12">
+            </script>
+        </div>
+    </div>
 </div>
 </body>
 </html>

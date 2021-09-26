@@ -1,0 +1,72 @@
+#listOfCases{
+    padding:30px;
+
+    height:auto;
+    background: #2f4f4e;
+
+}
+body{
+    width: 500px;
+    margin: auto;
+}
+#newCases{
+    font-size:16px;
+    padding:5px;
+    border:none;
+    width:300px;
+}
+#submit{
+    background: #d9d9d9;
+    color:#656370;
+    border:none;
+    font-size:16px;
+    padding:10px
+}
+#allCases{
+    width: 100%;
+    height: 300px;
+    overflow: auto;
+}
+.success{
+    width: 50px;
+    height: 100%;
+    font-size:24px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #656370;
+    cursor: pointer;
+}
+.deny{
+    width: 50px;
+    height: 100%;
+    font-size:24px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #656370;
+    cursor: pointer;
+}
+.list{
+    height: 50px;
+    width: 100%;
+    display: flex;
+}
+.label{
+    font-size:24px;
+    background: #656370;
+    width: 100%;
+    color:white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-weight: 300;
+}
+#wrapper{
+    position: fixed; /* or absolute */
+    top: 30%;
+
+
+}
